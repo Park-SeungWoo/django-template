@@ -15,7 +15,7 @@ from datetime import timedelta
 
 import pymysql
 
-import food.core.constants.strings.env_strings as env
+import main_app_name.core.constants.strings.env_strings as env
 
 pymysql.install_as_MySQLdb()
 
@@ -43,9 +43,6 @@ INSTALLED_APPS = [
 
     # my apps
     'main_app_name',
-
-    # scheduler
-    'django_apscheduler',
 ]
 
 # for scheduler
@@ -158,16 +155,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_name_in_docker_compose_or_anything',
-        'USER': env.DB_USER,
-        'PASSWORD': env.DB_PASSWORD,
-        'HOST': env.DB_HOST,
-        'PORT': env.DB_PORT,
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'db_name_in_docker_compose_or_anything',
+#         'USER': env.DB_USER,
+#         'PASSWORD': env.DB_PASSWORD,
+#         'HOST': env.DB_HOST,
+#         'PORT': env.DB_PORT,
+#     }
+# }
 
 # Logger settings
 LOG_DIR = BASE_DIR / "logs"
