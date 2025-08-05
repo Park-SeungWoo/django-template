@@ -6,7 +6,7 @@ from ...dtos.general.paging_dto import PagingDto
 from ...responses.error_response import ErrorResponse
 
 
-def paging(default_page_no: int=1, default_page_size: int=10):
+def paging(default_page_no: int = 1, default_page_size: int = 10):
     def decorator(view_method):
         def __get_raw_query_params(params: QueryDict) -> dict:
             query_params: dict = dict()
@@ -37,4 +37,5 @@ def paging(default_page_no: int=1, default_page_size: int=10):
 
         pass_paging_obj.__annotations__ = view_method.__annotations__
         return pass_paging_obj
+
     return decorator
